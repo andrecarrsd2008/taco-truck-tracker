@@ -3,16 +3,26 @@ import './App.css';
 import Map from './components/Map';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import locationIcon from '@iconify/icons-mdi/phone';
-
-
 
 function App() {
   const [idData, setIDData] = useState([])
   const [loading, setLoading] = useState(false)
   const [lat, setLat] = useState(0)
   const [lng, setLng] = useState(0)
+  const [currInfo, setCurrInfo ] = useState({})
+  const [modalIsOpen,setIsOpen] = useState(false);
+  let subtitle;
+
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+  function closeModal(){
+    setIsOpen(false);
+  }
+
 
   useEffect(() => {
     const fetchID = async () => {
@@ -26,16 +36,23 @@ function App() {
 
     fetchID()
   }, [])
+
   const getCoordinates = (newLat, newLng) => {
     setLat(newLat)
     setLng(newLng)
+  }
+
+  const getLocationInfoBox = (truck) => {
+    console.log({truck})
+    setCurrInfo(truck)
+    openModal()
   }
   return (
     <div className="App">
       <h1>rio seo</h1>
      <div className="dashboard-container">
      
-      <div>
+      <div className="card-container">
         {
           idData.map(truck => {
 
@@ -56,7 +73,7 @@ function App() {
                 onClick={() => getCoordinates(truck.latitude, truck.longitude)}>
                   DIRECTIONS</Button>
                 <Button className="btn-card" variant="secondary" href="#"  
-                onClick={() => getLocationInfoBox()}>MORE INFO</Button>
+                onClick={() => getLocationInfoBox(truck)}>MORE INFO</Button>
               </Card.Body>
             </Card>          
                 
@@ -64,7 +81,9 @@ function App() {
           }) 
         }
       </div>
-      <Map  idData={idData} lat={lat} lng={lng}/>
+      <div className="map-container">
+        <Map modalIsOpen={modalIsOpen} closeModal={closeModal} idData={idData} lat={lat} lng={lng} currInfo={currInfo}/>
+      </div>
       </div>
      
     </div>

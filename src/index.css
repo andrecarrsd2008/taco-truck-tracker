@@ -4,10 +4,8 @@ body {
 }
 
 .map {
-  width: 500px;
   height: 500px;
   flex: 2;
-  min-width: 100%;
   min-height: 100%;
   padding-left: 1rem;
 
@@ -16,19 +14,6 @@ body {
 .location-icon{
   font-size: 2rem;
   color: #B53c3c
-}
-
-.location-icon {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  width: 400px;
-  min-height: 200px;
-  padding: 20px;
-  background-color: rgba(0,0,0,0.6);
-  border-radius: 10px;
-  font-size: 18px;
-  color: #fff;
 }
 
 .location-info ul {
