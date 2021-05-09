@@ -1,0 +1,16 @@
+body {
+  padding: 25px;
+}
+
+.dashboard-container{
+  display: flex;
+  width: 500px;  
+}
+
+.btn-card{
+  color: #fff;
+  margin-right: 8px;
+  border-radius: 10px;
+  width: 130px; 
+}
+

@@ -1,0 +1,76 @@
+import { useState, useEffect } from 'react'
+import './App.css';
+import Map from './components/Map';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import { Icon, InlineIcon } from "@iconify/react";
+import locationIcon from '@iconify/icons-mdi/phone';
+
+
+
+function App() {
+  const [idData, setIDData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [lat, setLat] = useState(0)
+  const [lng, setLng] = useState(0)
+
+  useEffect(() => {
+    const fetchID = async () => {
+      setLoading(true)
+      const res = await fetch('https://my.api.mockaroo.com/locations.json?key=a45f1200')
+      const result = await res.json()
+      console.log("result", result)
+      setIDData(result)
+      setLoading(false)
+    }
+
+    fetchID()
+  }, [])
+  const getCoordinates = (newLat, newLng) => {
+    setLat(newLat)
+    setLng(newLng)
+  }
+  return (
+    <div className="App">
+      <h1>rio seo</h1>
+     <div className="dashboard-container">
+     
+      <div>
+        {
+          idData.map(truck => {
+
+            return(
+              
+              <Card key={truck.id} style={{ width: '22rem' }}>
+              <Card.Body>
+            <Card.Title>{truck.name}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">{truck.address} <br />{truck.city} {truck.postal_code}</Card.Subtitle>
+                <Card.Text style={{ color: 'orange' }}>
+                <Icon icon={locationIcon} className="phone" />
+                 123-555-1234
+                </Card.Text>
+                <Card.Text style={{ color: '#3ad647' }}>
+                  Closed By {truck.friday_close}
+                </Card.Text>
+                <Button className="btn-card" variant="secondary" href="#" 
+                onClick={() => getCoordinates(truck.latitude, truck.longitude)}>
+                  DIRECTIONS</Button>
+                <Button className="btn-card" variant="secondary" href="#"  
+                onClick={() => getLocationInfoBox()}>MORE INFO</Button>
+              </Card.Body>
+            </Card>          
+                
+            )
+          }) 
+        }
+      </div>
+      <Map  idData={idData} lat={lat} lng={lng}/>
+      </div>
+     
+    </div>
+  );
+}
+
+
+
+export default App;
