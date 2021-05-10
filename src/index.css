@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.map {
+  height: 500px;
+  flex: 2;
+  min-height: 100%;
+  padding-left: 1rem;
+
+}
+
+.location-icon{
+  font-size: 2rem;
+  color: #B53c3c
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}

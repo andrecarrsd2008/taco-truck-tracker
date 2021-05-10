@@ -1,0 +1,63 @@
+body {
+  padding: 25px;
+}
+
+.dashboard-container{
+  display: flex;
+  min-height: 100%;
+}
+
+.card-container {
+  height: 88vh;
+  overflow: scroll;
+  border: 1px solid black;
+}
+
+.btn-card{
+  color: #fff;
+  margin-right: 8px;
+  border-radius: 10px;
+  width: 130px; 
+}
+
+.map-container {
+  flex: 2;
+}
+
+.location-info-box {
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.close-button {
+  border: none;
+  display: inline-block;
+  padding: 5px 12px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  position: absolute;
+  right: 0;
+  font-size: large;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard-container{
+    flex-direction: column;
+  }
+
+  .card-container {
+    height: 37vh;
+  }
+
+  .map-container {
+    padding-top: 1rem;
+  }
+}
