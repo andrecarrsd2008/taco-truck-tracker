@@ -47,9 +47,7 @@ const LocationInfoBox = ({ truck, closeModal }) => {
             <Card.Text style={{ color: '#3ad647' }}>
               Sunday {`${truck.sunday_open} - ${truck.sunday_close}`}
             </Card.Text>
-
-          
-            <Button className="btn-card" variant="secondary" href="#" 
+            <Button className="btn" variant="secondary" href="#" 
             onClick={() => console.log('this is working')}>
                 VIEW FULL DETAILS
             </Button>

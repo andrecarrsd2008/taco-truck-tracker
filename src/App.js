@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Icon } from "@iconify/react";
 import locationIcon from '@iconify/icons-mdi/phone';
+import Header from './components/Header'
 
 function App() {
   const [idData, setIDData] = useState([])
@@ -49,7 +50,8 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>rio seo</h1>
+      <Header />
+      <h1 className="rio">rio seo</h1>
      <div className="dashboard-container">
      
       <div className="card-container">
@@ -82,7 +84,8 @@ function App() {
         }
       </div>
       <div className="map-container">
-        <Map modalIsOpen={modalIsOpen} closeModal={closeModal} idData={idData} lat={lat} lng={lng} currInfo={currInfo}/>
+        <Map modalIsOpen={modalIsOpen} closeModal={closeModal} 
+        idData={idData} lat={lat} lng={lng} currInfo={currInfo}/>
       </div>
       </div>
      

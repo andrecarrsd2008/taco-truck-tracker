@@ -16,7 +16,8 @@ const Map = ({ lat, lng, currInfo, modalIsOpen, closeModal }) => {
            >
            <LocationMarker lat={lat} lng={lng} />
         {
-            modalIsOpen && <LocationInfoBox modalIsOpen={modalIsOpen} closeModal={closeModal} truck={currInfo} />           
+            modalIsOpen && <LocationInfoBox modalIsOpen={modalIsOpen} 
+            closeModal={closeModal} truck={currInfo} />           
         }
            </GoogleMapReact>
         </div>
