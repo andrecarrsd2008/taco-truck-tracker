@@ -99,6 +99,7 @@ body {
   display: flex;
   height: 70px;
   background-color: goldenrod;
+  z-index: 9999;
 }
 
 .btn-left{
@@ -123,5 +124,21 @@ body {
 
   .map-container {
     padding-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .header{
+    background-color: #252526;
+  }
+  .btn-left{
+    position: -webkit-sticky;
+position: sticky;
+top: 0;
+  }
+  .btn-right{
+    position: -webkit-sticky;
+position: sticky;
+top: 0;
   }
 }
