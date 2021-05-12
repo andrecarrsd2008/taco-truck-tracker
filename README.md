@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 =======
 # Project Name:
 Taco Truck Tracker - Take Home Assessement
