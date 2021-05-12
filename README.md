@@ -1,3 +1,53 @@
+<<<<<<< HEAD
+=======
+# Project Name:
+Taco Truck Tracker - Take Home Assessement
+
+## Description
+We have created a single page web application to locate Taco Trucks in your area.
+
+## To See Project
+
+In order to see this take home project, you will need to download and unzip the HTML and CSS 
+files located within this project. 
+
+### Instructions
+Copy url: git@github.com:andrecarrsd2008/taco-truck-tracker.git
+
+In Gitbash type:<br>
+$ git clone git@github.com:andrecarrsd2008/taco-truck-tracker.git <br>
+Press Enter
+
+It will prompt you to add your password through Gitbash <br>
+e.g. "Enter password or passphrase for key"<br>
+
+Once that is complete, Gitbash has copied the file
+
+### What Comes Next
+Type in your Gitbash: <br>
+$ cd taco-truck-tracker
+
+$ ls (to see list of files) 
+$ code . (to open files throught Visual Studio Code)
+
+### Once in Visual Studio Code
+In the terminal using VSC <br>
+Type npm start <br>
+
+This should start website on your machine
+
+## Contact information for the programmer
+
+* Andre Carrizales
+* andrecarrsd2008@gmail.com
+
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+>>>>>>> 76d3b8a05bc5bf52bb688e44d00133c9ce515d2b
 In the project directory, you can run:
 
 ### `yarn start`
