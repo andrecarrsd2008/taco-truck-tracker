@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import './App.css';
 import Map from './components/Map';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Icon } from "@iconify/react";
 import locationIcon from '@iconify/icons-mdi/phone';
-import Header from './components/Header'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import DrawerToggleButton from './components/DrawerToggleButton';
 
 function App() {
   const [idData, setIDData] = useState([])
@@ -50,6 +52,7 @@ function App() {
   }
   return (
     <div className="App">
+      <DrawerToggleButton />
       <Header />
       <h1 className="rio">rio seo</h1>
      <div className="dashboard-container">
@@ -88,7 +91,7 @@ function App() {
         idData={idData} lat={lat} lng={lng} currInfo={currInfo}/>
       </div>
       </div>
-     
+     <Footer />
     </div>
   );
 }

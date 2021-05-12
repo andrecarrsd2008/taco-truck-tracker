@@ -7,6 +7,29 @@ body {
   min-height: 100%;
 }
 
+.toggle-button{
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__line {
+  width: 30px;
+  height: 2px;
+  background: #000;
+}
 
 .header {
   padding: 10px;
@@ -16,6 +39,7 @@ body {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 9999;
 }
 
 .header h1 {
@@ -69,6 +93,24 @@ body {
   right: 0;
   font-size: large;
 }
+
+.footer-container {
+  margin-top: 20px;
+  display: flex;
+  height: 70px;
+  background-color: goldenrod;
+}
+
+.btn-left{
+  width: 50%;
+  background-color: goldenrod;
+}
+
+.btn-right{
+  width: 50%;
+  background-color: lightgray;
+}
+
 
 @media only screen and (max-width: 600px) {
   .dashboard-container{
